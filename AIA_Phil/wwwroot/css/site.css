@@ -1,0 +1,246 @@
+:root {
+    --background-color: #f4f6f9; /* Soft light gray for a clean, modern feel */
+    --main-color: #2078bf; /* Deep blue */
+    --sub-color: #FFBF00; /* Amber */
+    --default-text-color: #f8f9fa; /* Soft off-white for better readability on blue */
+    --secondary-text-color: #d9e3f0; /* Muted light blue for subtle elements */
+    --border-color: #d1d5db; /* Light gray for subtle, modern borders */
+    --backup-color: #303030; /* Emerald green  */
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    background-image: url(/Images/Work.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+}
+
+label {
+    font-weight: bold !important;
+    margin-bottom: 0.2rem !important;
+}
+
+
+
+/*============= SIDEBAR ==============*/
+.wrapper {
+    display: flex;
+}
+
+.sidebar-content {
+    overflow-y: scroll; /* Ensure scrolling is enabled */
+
+    height: 88%;
+}
+
+.sidebar-logo {
+    margin: auto;
+    padding-top: 20px;
+}
+
+    .sidebar-logo a {
+        color: #053262 !important;
+        font-size: 1.5rem;
+        font-weight: 500;
+        border: 1px solid white;
+        padding: .2rem 3.5rem;
+    }
+
+.sidebar-nav {
+    padding: 0 0 2rem 0;
+    flex: 1 1 auto;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.8rem;
+    color: var(--default-text-color) !important;
+    display: block;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-link i {
+    font-size: 1.1rem;
+    margin-right: .75rem;
+}
+
+a.sidebar-link {
+    transition: background-color 0.3s ease, border-left 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-dropdown .sidebar-link {
+    transition: background-color 0.3s ease, border-left 0.3s ease, color 0.3s ease;
+}
+
+a.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, 0.075);
+    border-left: 3px solid var(--sub-color) !important;
+    color: var(--sub-color) !important;
+}
+
+.sidebar-dropdown .sidebar-link:hover {
+    background-color: rgba(255, 255, 255, 0.075);
+    border-left: 3px solid var(--backup-color) !important;
+    color: var(--backup-color) !important;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    width: 270px;
+    height: 100%;
+    background-color: #053262 !important;
+    padding-top: 0px 20px 20px 20px;
+    transition: left 0.3s ease-in-out;
+    overflow-y: hidden; /* Ensure scrolling is enabled */
+
+    text-decoration: none !important;
+}
+
+/* For Webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 5px; /* Width of the vertical scrollbar */
+    height: 5px; /* Height of the horizontal scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #3b7ddd; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Roundness of the scrollbar thumb */
+}
+
+::-webkit-scrollbar-track {
+    background: var(--main-color) !important; /* Background of the scrollbar track */
+}
+
+
+
+.sidebar ul li {
+    padding: 10px;
+    color: #fff !important;
+}
+
+.sidebar-dropdown .sidebar-item {
+    width: 85%;
+}
+
+.sidebar-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .sidebar-dropdown .sidebar-link.active {
+        background-color: rgba(255, 255, 255, .075);
+        border-left: 3px solid var(--backup-color) !important;
+        font-weight: bold;
+        color: var(--backup-color) !important;
+    }
+
+.sidebar-link.active {
+    background-color: rgba(255, 255, 255, .075);
+    border-left: 3px solid var(--sub-color) !important;
+    font-weight: bold;
+    color: var(--sub-color) !important;
+}
+
+.content {
+    margin-left: 270px; /* Adjusted to 250px by default */
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.ham-controller {
+    position: sticky;
+    margin-top: 10px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.navmobilescreen {
+    display: none !important;
+}
+
+.navdesktopscreen {
+    display: block !important;
+}
+
+
+@media (max-width: 640px) {
+
+    .content {
+        margin-left: 0px !important;
+    }
+
+    .sidebar {
+        top: 3rem !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .sidebar {
+        left: 0; /* Sidebar is visible */
+    }
+
+    #content {
+        margin-left: 270px; /* Space for the sidebar */
+    }
+}
+
+@media (max-width: 991px) {
+    .sidebar {
+        left: -270px; /* Sidebar is hidden off-screen */
+    }
+
+    #content {
+        margin-left: 0; /* No space for sidebar */
+    }
+}
+.hero {
+    text-align: center;
+    padding: 250px;
+    background: url('https://source.unsplash.com/1600x600/?store,shop') center/cover no-repeat;
+    color: black;
+    justify-content: center;
+}
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent overlay for better text contrast */
+        backdrop-filter: blur(3px); /* Apply the blur effect */
+        z-index: -2; /* Ensure the blur stays behind the text */
+        text-shadow: 0 0 4px rgba(255, 255, 255, 0.8); /* Soft glow effect */
+    }
+
+.cards-container {
+    margin-top: 35px;
+}
+
+
